@@ -5,10 +5,22 @@
         width: 90%;
         max-width: 650px;
         margin: auto;
+        position: relative;
+
+        .circle {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 0;
+            left: 1em;
+            transform: translateY(66%);
+            border-radius: 50%;
+            outline: 2px solid rgba(0, 0, 0, 0.575);
+        }
 
         .todoinput {
             width: 100%;
-            padding: .8em;
+            padding: .8em 1em .8em 3em;
             font-size: 1.2rem;
             font-family: inherit;
     
