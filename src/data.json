@@ -1,0 +1,27 @@
+[
+    {
+        "id" : 1,
+        "message" : "jog around the park 3x",
+        "isComplete" : true
+    }, 
+    {
+        "id" : 2,
+        "message" : "10 minutes meditation",
+        "isComplete" : false
+    },
+    {
+        "id" : 3,
+        "message" : "Read for 1 hour",
+        "isComplete" : false
+    }, 
+    {
+        "id" : 4,
+        "message" : "Pick up groceries",
+        "isComplete" : false
+    }, 
+    {
+        "id" : 5,
+        "message" : "Complete Todo App on Frontend Mentor",
+        "isComplete" : false
+    }
+]
