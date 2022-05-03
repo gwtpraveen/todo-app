@@ -4,7 +4,7 @@ const InputForm = (props) => {
     return ( 
         <form method="post" className="form">
             <div className="form-group">
-                <input type="text" name="todo" id="todo" className="todoinput" placeholder="Create a new todo..."/>
+                <input type="text" name="todo" id="todo" className="todoinput" placeholder="Create a new todo..." autoComplete="off"/>
                 <div className="circle"></div>
             </div>
             <input type="submit" value="" className="submitBtn"/>

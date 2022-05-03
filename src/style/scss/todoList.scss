@@ -1,0 +1,63 @@
+.todoList {
+    width: 90%;
+    max-width: 650px;
+    margin: 2rem auto 1rem;
+    text-align: center;
+    list-style-type: none;
+    border-radius: 8px;
+    
+    background-color: red;
+    .todo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        padding: 1em 1.5em;
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: blue;
+            cursor: pointer;
+        }
+
+        .dis {
+            margin-left: 1rem;    
+        }
+
+        .closeIcon {
+            cursor: pointer;
+        }
+    }
+
+    .opt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 1.5em;
+    }
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 90%;
+    max-width: 650px;
+    margin: auto;
+    background-color: blue;
+    padding: 1em 1.5em;
+    border-radius: 8px;
+}
+
+.message {
+    text-align: center;
+    margin: 3rem auto;
+}
