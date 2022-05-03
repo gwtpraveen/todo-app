@@ -37,6 +37,13 @@ function App() {
   }
 
   const handleDelete = (id) => {
+    setTodos(preVal => {
+      const newData = JSON.parse(JSON.stringify(preVal));
+      const targetTodo = newData.filter(item => item.id === id);
+      const targetTodoIndex = newData.indexOf(targetTodo[0]);
+      newData.splice(targetTodoIndex, 1);
+      return newData;
+      });
 
   }
 
