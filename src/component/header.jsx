@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 
 const Header = (props) => {
     const [theme, setTheme] = useState(false);
-    let classes = "./images/icon-";
+    let path = "./images/icon-";
     
     useEffect(() => {
         if (theme) {
@@ -16,12 +16,12 @@ const Header = (props) => {
         }
     })
 
-    theme ? classes += "sun.svg" : classes += "moon.svg";
+    theme ? path += "sun.svg" : path += "moon.svg";
 
     return ( 
         <header className="header">
             <h1 className="h1">TODO</h1>
-            <img src={classes} alt="icon for theme change" onClick={() => setTheme(preVal => !preVal)}/>
+            <img src={path} alt="icon for theme change" onClick={() => setTheme(preVal => !preVal)} className="themeChangeIcon"/>
         </header>
      );
 }

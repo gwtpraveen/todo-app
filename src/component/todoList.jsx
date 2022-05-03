@@ -1,20 +1,30 @@
 import "../style/css/todoList.css";
 
-const TodoList = ({data}) => {
+const TodoList = ({data, onDelete, onComplete}) => {
     const gradient = "linear-gradient(95deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))";
-    
+    const todoDisStyles = { textDecoration: "line-through", opacity: ".5"}
+
     return ( 
         <>
             <ul className="todoList">
                 {data.map(item => 
                     <li className="todo" key={item.id}>
                         <div>
-                            <div className="circle" style={item.isComplete ? { backgroundImage: gradient} : {}}>
+                            <div 
+                                className="circle" 
+                                style={item.isComplete ? { backgroundImage: gradient} : {}}
+                                onClick={() => onComplete(item.id)}    
+                            >
                                 {item.isComplete && <img src="./images/icon-check.svg" alt="" className="checkIcon"/>}
                             </div>
-                            <p className="dis">{item.message}</p>
+                            <p 
+                                className="dis"
+                                style={item.isComplete ? todoDisStyles : {}}
+                            >
+                                {item.message}
+                            </p>
                         </div>
-                        <img src="./images/icon-cross.svg" alt="close icon" className="closeIcon"/>
+                        <img src="./images/icon-cross.svg" alt="close icon" className="closeIcon" onClick={() => onDelete(item.id)}/>
                     </li>
                 )}
 

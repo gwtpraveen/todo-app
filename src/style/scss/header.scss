@@ -10,4 +10,15 @@
     .h1 {
         letter-spacing: 8px;
     }
+
+    .themeChangeIcon {
+        cursor: pointer;
+        opacity: .7;
+        transition: 300ms ease;
+
+        &:hover {
+            transform: scale(1.3) rotate(45deg);
+            opacity: 1;
+        }
+    }
 }

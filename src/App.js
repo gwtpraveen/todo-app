@@ -27,11 +27,24 @@ function App() {
     });
   };
 
+  const handleComplete = (id) => {
+    setTodos(preVal => {
+      const newData = JSON.parse(JSON.stringify(preVal));
+      const targetTodo = newData.filter(item => item.id === id);
+      targetTodo[0].isComplete = !targetTodo[0].isComplete;
+      return newData;
+    })
+  }
+
+  const handleDelete = (id) => {
+
+  }
+
   return (
     <div className="App">
       <Header/>
       <InputForm onNewTodo={handleNewTodo}/>
-      <TodoList data={todos}/>
+      <TodoList data={todos} onDelete={handleDelete} onComplete={handleComplete}/>
     </div>
   );
 }
