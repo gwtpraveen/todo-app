@@ -1,9 +1,12 @@
 import './App.css';
+import Header from './component/header';
+import InputForm from './component/inputForm';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Header/>
+      <InputForm/>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  justify-content: center;
+}
+.form .form-group {
+  width: 90%;
+  max-width: 650px;
+  margin: auto;
+}
+.form .form-group .todoinput {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+.form .form-group .todoinput::placeholder {
+  opacity: 0.2;
+  font-size: 1rem;
+}
+.form .form-group .todoinput:focus, .form .form-group .todoinput:active {
+  outline: 1px dotted rgba(0, 0, 0, 0.254);
+}
+.form .submitBtn {
+  display: none;
+}
+
+/*# sourceMappingURL=inputForm.css.map */
