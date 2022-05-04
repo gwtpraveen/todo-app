@@ -5,7 +5,7 @@
   text-align: center;
   list-style-type: none;
   border-radius: 8px;
-  background-color: rgb(215, 170, 170);
+  background-color: wheat;
 }
 .todoList .todo {
   display: flex;
@@ -13,17 +13,18 @@
   justify-content: space-between;
   border-bottom: 1px solid black;
   padding: 1em 1.5em;
+  cursor: pointer;
 }
 .todoList .todo div {
   display: flex;
   align-items: center;
 }
 .todoList .todo .circle {
+  flex: 1 0 25px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   overflow: hidden;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,22 +35,26 @@
 }
 .todoList .todo .dis {
   margin-left: 1rem;
+  text-align: left;
 }
 .todoList .todo .closeIcon {
-  cursor: pointer;
+  display: none;
+}
+.todoList .todo:hover .closeIcon {
+  display: block;
 }
 .todoList .todoListLastRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.3em 1.5em;
+  color: #606176;
 }
 .todoList .todoListLastRow .clearCompleted {
   cursor: pointer;
-  opacity: 0.6;
 }
 .todoList .todoListLastRow .clearCompleted:hover {
-  opacity: 1;
+  color: #fff;
 }
 
 .filtersRow {
@@ -67,14 +72,26 @@
 .filtersRow .filters {
   opacity: 0.6;
   cursor: pointer;
+  color: #5b5d76;
 }
 .filtersRow .filters:hover {
+  color: #fff;
   opacity: 1;
 }
 
 .message {
   text-align: center;
   margin: 3rem auto;
+  color: #606176;
+}
+
+body.dark .todoList {
+  background-color: #25273c;
+  color: #c6c8df;
+}
+
+body.dark .filtersRow {
+  background-color: #25273c;
 }
 
 /*# sourceMappingURL=todoList.css.map */

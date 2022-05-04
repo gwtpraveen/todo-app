@@ -35,4 +35,10 @@
   display: none;
 }
 
+body.dark .form .form-group .todoinput {
+  background-color: #25273c;
+  color: #fff;
+  border: none;
+}
+
 /*# sourceMappingURL=inputForm.css.map */

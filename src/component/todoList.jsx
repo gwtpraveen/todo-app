@@ -6,7 +6,7 @@ const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
 
     const gradient = "linear-gradient(95deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))";
     const todoDisStyles = { textDecoration: "line-through", opacity: ".5"};
-    const filterActiveStyles = {opacity : 1};
+    const filterActiveStyles = {opacity : 1, color: "hsl(220, 98%, 61%)"};
     let todos;
 
     if (filter === "all") {

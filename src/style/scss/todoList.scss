@@ -6,13 +6,14 @@
     list-style-type: none;
     border-radius: 8px;
     
-    background-color: rgb(215, 170, 170);
+    background-color: wheat;
     .todo {
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid black;
         padding: 1em 1.5em;
+        cursor: pointer;
 
         div {
             display: flex;
@@ -20,11 +21,11 @@
         }
 
         .circle {
+            flex: 1 0 25px;
             width: 25px;
             height: 25px;
             border-radius: 50%;
             overflow: hidden;
-            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,11 +37,16 @@
         }
 
         .dis {
-            margin-left: 1rem;    
+            margin-left: 1rem;   
+            text-align: left; 
         }
 
         .closeIcon {
-            cursor: pointer;
+            display: none;
+        }
+
+        &:hover .closeIcon {
+            display: block;
         }
     }
 
@@ -49,13 +55,13 @@
         justify-content: space-between;
         align-items: center;
         padding: 1.3em 1.5em;
+        color: #606176;
 
         .clearCompleted {
             cursor: pointer;
-            opacity: .6;
 
             &:hover {
-                opacity: 1;
+                color: #fff;
             }
         }
     }
@@ -76,7 +82,9 @@
     .filters {
         opacity: .6;
         cursor: pointer;
+        color: #5b5d76;
         &:hover {
+            color: #fff;
             opacity: 1;
         }
     }
@@ -85,4 +93,14 @@
 .message {
     text-align: center;
     margin: 3rem auto;
+    color: #606176;
+}
+
+body.dark .todoList {
+    background-color: #25273c;
+    color: #c6c8df;
+}
+
+body.dark .filtersRow {
+    background-color: #25273c;
 }

@@ -17,5 +17,5 @@ body {
 }
 
 body.dark {
-  background: url(../public/images/bg-desktop-dark.jpg) no-repeat top center
+  background: #181824 url(../public/images/bg-desktop-dark.jpg) no-repeat top center
 }
