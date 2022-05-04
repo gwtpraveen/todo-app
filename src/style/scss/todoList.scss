@@ -44,15 +44,24 @@
         }
     }
 
-    .opt {
+    .todoListLastRow {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1.3em 1.5em;
+
+        .clearCompleted {
+            cursor: pointer;
+            opacity: .6;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }
 
-.filters {
+.filtersRow {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,6 +72,14 @@
     background-color: rgb(169, 169, 228);
     padding: 1em 1.5em;
     border-radius: 8px;
+
+    .filters {
+        opacity: .6;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 .message {

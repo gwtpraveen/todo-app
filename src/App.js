@@ -5,14 +5,18 @@ import InputForm from './component/inputForm';
 import TodoList from './component/todoList';
 import data from "./data.json";
 
+
 function App() {
   const [todos, setTodos] = useState([]);
+
 
   // fetch data from the data.json 
   useEffect(() => {
     setTodos(data);
   }, []);
 
+
+  // add new todos to the list 
   const handleNewTodo = (todo) => {
     const newTodo = {
       "id" : Math.floor(Math.random() * 999999999999999),
@@ -27,6 +31,8 @@ function App() {
     });
   };
 
+
+  // check is the todo complete or not 
   const handleComplete = (id) => {
     setTodos(preVal => {
       const newData = JSON.parse(JSON.stringify(preVal));
@@ -36,6 +42,8 @@ function App() {
     })
   }
 
+
+  // delete todo 
   const handleDelete = (id) => {
     setTodos(preVal => {
       const newData = JSON.parse(JSON.stringify(preVal));
@@ -44,11 +52,22 @@ function App() {
 
   }
 
+
+  // clear all completed todos 
+  const handleClearCompleted = () => {
+    setTodos(preVal => {
+      const newData = JSON.parse(JSON.stringify(preVal));
+      return newData.filter(item => item.isComplete === false);
+    })
+
+  };
+
+
   return (
     <div className="App">
       <Header/>
       <InputForm onNewTodo={handleNewTodo}/>
-      <TodoList data={todos} onDelete={handleDelete} onComplete={handleComplete}/>
+      <TodoList data={todos} onDelete={handleDelete} onComplete={handleComplete} onClearCompleted={handleClearCompleted}/>
     </div>
   );
 }
