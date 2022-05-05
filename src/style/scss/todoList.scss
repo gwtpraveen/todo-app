@@ -8,6 +8,7 @@
     color: #474658;
     font-weight: 500;
     background-color: #f4f3f8;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.271);
     .todo {
         display: flex;
         align-items: center;
@@ -30,7 +31,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            outline: 1px solid rgba(0, 0, 0, 0.367);
+            outline: 1px solid rgba(0, 0, 0, 0.201);
+
+            &:hover {
+                outline-color: rgba(0, 0, 0, 0.386);
+            }
 
             .checkIcon {
                 transform: scale(1.2);
@@ -40,6 +45,7 @@
         .dis {
             margin-left: 1rem;   
             text-align: left; 
+            transition: 1000ms ease;
         }
 
         .closeIcon {
@@ -57,6 +63,7 @@
         align-items: center;
         padding: 1.3em 1.5em;
         color: #606176;
+        position: relative;
 
         .clearCompleted {
             cursor: pointer;
@@ -73,11 +80,8 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
-    width: 90%;
-    max-width: 650px;
     margin: auto;
     background-color: #fff;
-    padding: 1em 1.5em;
     border-radius: 8px;
 
     .filters {
@@ -103,6 +107,14 @@ body.dark .todoList {
 
     .todo {
         border-color: #37394e;
+
+        .circle {
+            outline-color: rgba(255, 255, 255, 0.138);
+
+            &:hover {
+                outline-color: rgba(255, 255, 255, 0.289);
+            }
+        }
     }
 
     .todoListLastRow {
@@ -121,5 +133,21 @@ body.dark .filtersRow {
         &:hover {
             color: #fff;
         }
+    }
+}
+
+@media (max-width: 600px) {
+    .filtersRow {
+        position: absolute;
+        bottom: -70px;
+        width: 100%;
+        left: 0;
+        max-width: 650px;
+        padding: 1em 1.5em;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.271);
+    }
+
+    .message {
+        margin-top: 6rem;
     }
 }

@@ -13,9 +13,9 @@
             position: absolute;
             top: 0;
             left: 1em;
-            transform: translateY(66%);
+            transform: translateY(50%);
             border-radius: 50%;
-            outline: 2px solid rgba(0, 0, 0, 0.575);
+            outline: 2px solid rgba(0, 0, 0, 0.201);
         }
 
         .todoinput {
@@ -23,14 +23,16 @@
             padding: .8em 1em .8em 3em;
             font-size: 1.2rem;
             font-family: inherit;
+            border: none;
+            border-radius: 8px;
     
             &::placeholder {
-                opacity: .2;
+                opacity: .4;
                 font-size: 1rem;
             }
     
             &:focus, &:active {
-                outline: 1px dotted rgba(0, 0, 0, 0.254);
+                outline: 3px solid rgba(0, 0, 0, 0.165);
             }
         }
     }
@@ -42,10 +44,13 @@
 
 body.dark .form {
     .form-group {
+
+        .circle {
+            outline-color: rgba(255, 255, 255, 0.138);
+        }
         .todoinput {
             background-color: #25273c;
             color: #fff;
-            border: none;
         }
     }
 }

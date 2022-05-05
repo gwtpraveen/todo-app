@@ -14,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #fafafa url(../public/images/bg-desktop-light.jpg) no-repeat top center;
   overflow-x: hidden;
+  transition: 300ms ease;
 }
 
 body.dark {

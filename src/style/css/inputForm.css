@@ -14,31 +14,35 @@
   position: absolute;
   top: 0;
   left: 1em;
-  transform: translateY(66%);
+  transform: translateY(50%);
   border-radius: 50%;
-  outline: 2px solid rgba(0, 0, 0, 0.575);
+  outline: 2px solid rgba(0, 0, 0, 0.201);
 }
 .form .form-group .todoinput {
   width: 100%;
   padding: 0.8em 1em 0.8em 3em;
   font-size: 1.2rem;
   font-family: inherit;
+  border: none;
+  border-radius: 8px;
 }
 .form .form-group .todoinput::placeholder {
-  opacity: 0.2;
+  opacity: 0.4;
   font-size: 1rem;
 }
 .form .form-group .todoinput:focus, .form .form-group .todoinput:active {
-  outline: 1px dotted rgba(0, 0, 0, 0.254);
+  outline: 3px solid rgba(0, 0, 0, 0.165);
 }
 .form .submitBtn {
   display: none;
 }
 
+body.dark .form .form-group .circle {
+  outline-color: rgba(255, 255, 255, 0.138);
+}
 body.dark .form .form-group .todoinput {
   background-color: #25273c;
   color: #fff;
-  border: none;
 }
 
 /*# sourceMappingURL=inputForm.css.map */
