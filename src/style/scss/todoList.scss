@@ -5,13 +5,14 @@
     text-align: center;
     list-style-type: none;
     border-radius: 8px;
-    
-    background-color: wheat;
+    color: #474658;
+    font-weight: 500;
+    background-color: #f4f3f8;
     .todo {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #e6e5ea;
         padding: 1em 1.5em;
         cursor: pointer;
 
@@ -29,7 +30,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            outline: 1px solid black;
+            outline: 1px solid rgba(0, 0, 0, 0.367);
 
             .checkIcon {
                 transform: scale(1.2);
@@ -61,7 +62,7 @@
             cursor: pointer;
 
             &:hover {
-                color: #fff;
+                color: #25273c;
             }
         }
     }
@@ -75,7 +76,7 @@
     width: 90%;
     max-width: 650px;
     margin: auto;
-    background-color: rgb(169, 169, 228);
+    background-color: #fff;
     padding: 1em 1.5em;
     border-radius: 8px;
 
@@ -84,7 +85,7 @@
         cursor: pointer;
         color: #5b5d76;
         &:hover {
-            color: #fff;
+            color: #25273c;
             opacity: 1;
         }
     }
@@ -99,8 +100,26 @@
 body.dark .todoList {
     background-color: #25273c;
     color: #c6c8df;
+
+    .todo {
+        border-color: #37394e;
+    }
+
+    .todoListLastRow {
+        .clearCompleted {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
 }
 
 body.dark .filtersRow {
     background-color: #25273c;
+
+    .filters {
+        &:hover {
+            color: #fff;
+        }
+    }
 }

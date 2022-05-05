@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 
 
 const Header = (props) => {
-    const [theme, setTheme] = useState(false);
+    const [theme, setTheme] = useState(true);
     let path = "./images/icon-";
     
     useEffect(() => {
