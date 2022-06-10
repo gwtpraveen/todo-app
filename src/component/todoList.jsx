@@ -1,8 +1,9 @@
 import "../style/css/todoList.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
     const [filter, setFilter] = useState("all");
+    const liEle = useRef();
 
     // styles 
     const gradient = "linear-gradient(95deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))";
@@ -22,11 +23,31 @@ const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
     // get how many active todos are left 
     const leftTodos = data.filter(item => item.isComplete === false).length;
 
+    const handleDragStart = () => {
+        console.log("drag start");
+    };
+
+    const handleDragEnd = () => {
+        console.log("drag end");
+    };
+
+    const handleDragOver = (e) => {
+        console.log(e.target)
+        console.log(liEle.current);
+        console.log("drag over");
+    }
+
     return ( 
         <>
             <ul className="todoList">
                 {todos.map(item => 
-                    <li className="todo" key={item.id}>
+                    <li className="todo" key={item.id} 
+                        ref={liEle}
+                        draggable="true" 
+                        onDragStart={handleDragStart} 
+                        onDragEnd={handleDragEnd} 
+                        onDragOver={handleDragOver}
+                        >
                         <div>
                             <div 
                                 className="circle" 
