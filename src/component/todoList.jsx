@@ -23,18 +23,22 @@ const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
     // get how many active todos are left 
     const leftTodos = data.filter(item => item.isComplete === false).length;
 
-    const handleDragStart = () => {
-        console.log("drag start");
+    const handleDragStart = (e) => {
+        e.target.classList.add("dragging");
     };
 
-    const handleDragEnd = () => {
-        console.log("drag end");
+    const handleDragEnd = e => {
+        e.target.classList.remove("dragging");
     };
 
     const handleDragOver = (e) => {
-        console.log(e.target)
-        console.log(liEle.current);
-        console.log("drag over");
+        const draggingElement = document.querySelector(".dragging");
+        const todolist = document.querySelector(".todoList");
+        if (todolist.lastElementChild.previousElementSibling !== e.target) {
+            todolist.insertBefore(draggingElement, e.target);
+        } else {
+            todolist.insertBefore(draggingElement, todolist.lastElementChild);
+        }
     }
 
     return ( 

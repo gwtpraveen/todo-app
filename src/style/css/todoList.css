@@ -90,6 +90,10 @@
   color: #606176;
 }
 
+.todoList .todo.dragging {
+  opacity: 0.5;
+}
+
 body.dark .todoList {
   background-color: #25273c;
   color: #c6c8df;
