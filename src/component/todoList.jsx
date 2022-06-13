@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
     const [filter, setFilter] = useState("all");
     const liEle = useRef();
+    const todoList = useRef();
 
     // styles 
     const gradient = "linear-gradient(95deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))";
@@ -23,6 +24,7 @@ const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
     // get how many active todos are left 
     const leftTodos = data.filter(item => item.isComplete === false).length;
 
+    // handle dragging and dropping 
     const handleDragStart = (e) => {
         e.target.classList.add("dragging");
     };
@@ -32,18 +34,22 @@ const TodoList = ({data, onDelete, onComplete, onClearCompleted}) => {
     };
 
     const handleDragOver = (e) => {
-        const draggingElement = document.querySelector(".dragging");
-        const todolist = document.querySelector(".todoList");
-        if (todolist.lastElementChild.previousElementSibling !== e.target) {
-            todolist.insertBefore(draggingElement, e.target);
-        } else {
-            todolist.insertBefore(draggingElement, todolist.lastElementChild);
+        try {
+            const draggingElement = document.querySelector(".dragging");
+            const todolist = document.querySelector(".todoList");
+            if (todolist.lastElementChild.previousElementSibling !== e.target) {
+                todolist.insertBefore(draggingElement, e.target);
+            } else {
+                todolist.insertBefore(draggingElement, todolist.lastElementChild);
+            }
+        } catch(err) {
+            return null
         }
     }
 
     return ( 
         <>
-            <ul className="todoList">
+            <ul className="todoList" ref={todoList}>
                 {todos.map(item => 
                     <li className="todo" key={item.id} 
                         ref={liEle}

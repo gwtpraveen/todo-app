@@ -3,12 +3,17 @@ import { useState, useEffect } from 'react';
 import Header from './component/header';
 import InputForm from './component/inputForm';
 import TodoList from './component/todoList';
-import data from "./data.json";
+
+let data = [];
 
 
 function App() {
   const [todos, setTodos] = useState([]);
 
+  // get data from local storage 
+  if (localStorage.getItem("data")) {
+    data = JSON.parse(localStorage.getItem("data"));
+  }
 
   // fetch data from the data.json 
   useEffect(() => {
@@ -27,6 +32,7 @@ function App() {
     setTodos(preVal => {
       const newData = [...preVal];
       newData.push(newTodo);
+      localStorage.setItem("data", JSON.stringify(newData));
       return newData;
     });
   };
@@ -38,6 +44,7 @@ function App() {
       const newData = JSON.parse(JSON.stringify(preVal));
       const targetTodo = newData.filter(item => item.id === id);
       targetTodo[0].isComplete = !targetTodo[0].isComplete;
+      localStorage.setItem("data", JSON.stringify(newData));
       return newData;
     })
   }
