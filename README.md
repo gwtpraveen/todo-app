@@ -11,6 +11,7 @@
 - [Author](#author)
 
 ## Overview
+This is a simple to-do app. Users can change the theme (light/dark) and this uses localStorage to store all todos. Last but not least, dragging allows you to rearrange tados. 
 
 ### Screenshot
 
